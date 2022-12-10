@@ -34,7 +34,7 @@ function createTripPointTemplate() {
 </li>`;
 }
 
-export default class NewTripPointView {
+export default class TripPointView {
   getTemplate() {
     return createTripPointTemplate();
   }

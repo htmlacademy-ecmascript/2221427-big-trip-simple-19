@@ -157,7 +157,7 @@ function createTripPointEditTemplate() {
 </form>`;
 }
 
-export default class NewTripPointEditView {
+export default class TripPointEditView {
   getTemplate() {
     return createTripPointEditTemplate();
   }

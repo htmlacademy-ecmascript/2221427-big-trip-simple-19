@@ -22,7 +22,7 @@ function createTripFilterTemplate() {
   </div>`;
 }
 
-export default class NewTripFilterView {
+export default class TripFilterView {
   getTemplate() {
     return createTripFilterTemplate();
   }

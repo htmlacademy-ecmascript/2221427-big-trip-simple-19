@@ -1,27 +1,28 @@
-import {render} from '../render.js';
-import NewTripFilterView from '../view/trip-filter-view.js';
-import NewTripPointView from '../view/trip-point-view.js';
-import NewTripSortView from '../view/trip-sort-view.js';
-import NewTripPointListView from '../view/trip-point-view.js';
-import NewTripPointEditView from '../view/trip-point-edit-view.js';
+const POINTS_COUNT = 3;
 
-export default class TripPresenter {
-  newPointListView = new NewTripPointListView();
-  POINTS_COUNT = 3;
+import {render, RenderPosition} from '../render.js';
+import TripListView from '../view/trip-list-view.js';
+import TripPointCreateView from '../view/trip-point-create-view.js';
+import TripPointEditView from '../view/trip-point-edit-view.js';
+import TripPointView from '../view/trip-point-view.js';
 
-  constructor({filterContainer, siteMainContainer}) {
-    this.filterContainer = filterContainer;
-    this.siteMainContainer = siteMainContainer;
+
+export default class TripListPresenter {
+  newPointListView = new TripListView();
+
+
+  constructor({siteContainer}) {
+    this.siteContainer = siteContainer;
   }
 
   init() {
-    render(new NewTripFilterView(), this.filterContainer);
-    render(new NewTripSortView(), this.siteMainContainer);
-    render(this.newPointListView, this.siteMainContainer);
-    render(new NewTripPointEditView(), this.newPointListView.getElement());
+    render(this.newPointListView, this.siteContainer);
+    render(new TripPointCreateView(), this.newPointListView.getElement());
+    render(new TripPointEditView(), this.newPointListView.getElement(), RenderPosition.AFTERBEGIN);
 
-    for (let i = 0; i < this.POINTS_COUNT; i++) {
-      render(new NewTripPointView(), this.newPointListView.getElement());
+
+    for (let i = 0; i < POINTS_COUNT; i++) {
+      render(new TripPointView(), this.newPointListView.getElement());
     }
   }
 }

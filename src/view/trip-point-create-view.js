@@ -116,7 +116,7 @@ function createTripPointCreateTemplate() {
 </li>`;
 }
 
-export default class NewTripPointCreateView {
+export default class TripPointCreateView {
   getTemplate() {
     return createTripPointCreateTemplate();
   }

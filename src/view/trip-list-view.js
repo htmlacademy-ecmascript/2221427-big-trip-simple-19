@@ -6,7 +6,7 @@ function createTripListTemplate() {
   </ul>`;
 }
 
-export default class NewTripListView {
+export default class TripListView {
   getTemplate() {
     return createTripListTemplate();
   }
