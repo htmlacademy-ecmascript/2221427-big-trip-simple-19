@@ -1,7 +1,11 @@
 const RenderPosition = {
+  // перед началом
   BEFOREBEGIN: 'beforebegin',
+  // после начала
   AFTERBEGIN: 'afterbegin',
+  // перед концом
   BEFOREEND: 'beforeend',
+  // после конца
   AFTEREND: 'afterend',
 };
 
