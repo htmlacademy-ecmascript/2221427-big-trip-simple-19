@@ -7,7 +7,7 @@ import TripPointEditView from '../view/trip-point-edit-view.js';
 import TripPointView from '../view/trip-point-view.js';
 
 
-export default class TripListPresenter {
+export default class TripPresenter {
   newPointListView = new TripListView();
 
 
